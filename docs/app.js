@@ -1,8 +1,8 @@
 (() => {
   'use strict';
 
-  // ---------- Escala del "stage" (396x812, igual al área de contenido de la app) ----------
-  const STAGE_W = 396, STAGE_H = 812;
+  // ---------- Escala del "stage" (1280x720, formato 16:9 adaptado a cualquier pantalla) ----------
+  const STAGE_W = 1280, STAGE_H = 720;
   const stage = document.getElementById('stage');
   function ajustarEscala() {
     const escala = Math.min(window.innerWidth / STAGE_W, window.innerHeight / STAGE_H);
@@ -24,6 +24,39 @@
       t.style.animation = '';
     }
   }
+
+  // El navegador no tiene teclas de navegación físicas: usamos la History API para que
+  // Atrás/Adelante del navegador funcionen de forma consistente con la navegación interna.
+  // Las transiciones automáticas (fin del temporizador, fin de la silla) reemplazan la entrada
+  // (espejo de popUpTo(inclusive) en GusanitoNavHost.kt), así "atrás" no puede reanudar una
+  // cuenta regresiva ya terminada.
+  let currentScreenId = 'screen-inicio';
+  function irA(id, { replace = false } = {}) {
+    goto(id);
+    currentScreenId = id;
+    const state = { screen: id };
+    if (replace) history.replaceState(state, '', '#' + id);
+    else history.pushState(state, '', '#' + id);
+  }
+  function limpiarAlSalir(idSaliente) {
+    if (idSaliente === 'screen-cuenta-t') { timerT.reiniciarCuenta(); completadoT = false; renderDuracionT(); }
+    if (idSaliente === 'screen-cierre-s') { timerS.reiniciarCuenta(); completadoS = false; }
+  }
+  history.replaceState({ screen: 'screen-inicio' }, '', '#screen-inicio');
+  window.addEventListener('popstate', (ev) => {
+    // Bloqueo intencional: "solo un adulto puede terminar" la silla de pensar.
+    if (currentScreenId === 'screen-cuenta-s') {
+      history.pushState({ screen: 'screen-cuenta-s' }, '', '#screen-cuenta-s');
+      return;
+    }
+    limpiarAlSalir(currentScreenId);
+    let destino = (ev.state && ev.state.screen) || 'screen-inicio';
+    // Las cuentas regresivas no se pueden reanudar navegando con atrás/adelante.
+    if (destino === 'screen-cuenta-t') destino = 'screen-duracion-t';
+    if (destino === 'screen-cuenta-s') destino = 'screen-duracion-s';
+    goto(destino);
+    currentScreenId = destino;
+  });
 
   // ---------- TimerEngine: espejo exacto de TimerViewModel.kt (timestamps reales, nunca acumuladores) ----------
   class TimerEngine {
@@ -238,8 +271,8 @@
   });
 
   // ---------- Pantalla 1 · Inicio ----------
-  document.getElementById('card-temporizador').addEventListener('click', () => goto('screen-duracion-t'));
-  document.getElementById('card-silla').addEventListener('click', () => goto('screen-duracion-s'));
+  document.getElementById('card-temporizador').addEventListener('click', () => irA('screen-duracion-t'));
+  document.getElementById('card-silla').addEventListener('click', () => irA('screen-duracion-s'));
 
   // ---------- Pantalla 2 · Duración Temporizador ----------
   const ATAJOS = [1, 3, 5, 10, 15, 30];
@@ -259,10 +292,10 @@
   }
   document.getElementById('t-minus').addEventListener('click', () => { timerT.decrementar(); renderDuracionT(); });
   document.getElementById('t-plus').addEventListener('click', () => { timerT.incrementar(); renderDuracionT(); });
-  document.getElementById('back-duracion-t').addEventListener('click', () => goto('screen-inicio'));
+  document.getElementById('back-duracion-t').addEventListener('click', () => history.back());
   document.getElementById('empezar-btn').addEventListener('click', () => {
     timerT.iniciarCuenta();
-    goto('screen-cuenta-t');
+    irA('screen-cuenta-t');
   });
 
   // ---------- Pantalla 3 · Cuenta regresiva Temporizador ----------
@@ -279,7 +312,7 @@
   document.getElementById('t-terminar').addEventListener('click', () => {
     timerT.reiniciarCuenta();
     renderDuracionT();
-    goto('screen-duracion-t');
+    irA('screen-duracion-t');
   });
 
   let completadoT = false;
@@ -304,7 +337,7 @@
       completadoT = true;
       if (navigator.vibrate) navigator.vibrate(180);
       chime('temporizador');
-      goto('screen-termino');
+      irA('screen-termino', { replace: true });
     }
     if (!completado) completadoT = false;
   }
@@ -336,12 +369,12 @@
   document.getElementById('otra-vez-btn').addEventListener('click', () => {
     timerT.iniciarCuenta();
     completadoT = false;
-    goto('screen-cuenta-t');
+    irA('screen-cuenta-t');
   });
   document.getElementById('volver-inicio-btn').addEventListener('click', () => {
     timerT.reiniciarCuenta();
     completadoT = false;
-    goto('screen-inicio');
+    irA('screen-inicio', { replace: true });
   });
 
   // ---------- Pantalla 5 · Silla · duración ----------
@@ -362,10 +395,10 @@
   }
   document.getElementById('s-minus').addEventListener('click', () => { timerS.decrementar(); renderDuracionS(); });
   document.getElementById('s-plus').addEventListener('click', () => { timerS.incrementar(); renderDuracionS(); });
-  document.getElementById('back-duracion-s').addEventListener('click', () => goto('screen-inicio'));
+  document.getElementById('back-duracion-s').addEventListener('click', () => history.back());
   document.getElementById('comenzar-btn').addEventListener('click', () => {
     timerS.iniciarCuenta();
-    goto('screen-cuenta-s');
+    irA('screen-cuenta-s');
   });
 
   // ---------- Pantalla 6 · Silla · cuenta regresiva ----------
@@ -374,7 +407,7 @@
     if (completadoS) return;
     completadoS = true;
     chime('silla');
-    goto('screen-cierre-s');
+    irA('screen-cierre-s', { replace: true });
   }
 
   function loopCuentaS(ahoraMs) {
@@ -439,7 +472,7 @@
   document.getElementById('listo-btn').addEventListener('click', () => {
     timerS.reiniciarCuenta();
     completadoS = false;
-    goto('screen-inicio');
+    irA('screen-inicio', { replace: true });
   });
 
   // ---------- Bucle principal ----------
