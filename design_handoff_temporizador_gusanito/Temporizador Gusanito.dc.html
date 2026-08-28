@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas"><link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet"><style>
+body{margin:0;background:#EDE7DA;font-family:Nunito,system-ui,sans-serif}
+a{color:#B5651D;text-decoration:none}a:hover{color:#8A4C13}
+.dv-turn{padding:40px 44px 32px;scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 8px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:700 13px/1.2 Nunito,sans-serif;color:#1a1a1a}
+.dv-sub{font:700 12px Nunito;color:rgba(0,0,0,.45);letter-spacing:1.5px;text-transform:uppercase;margin:26px 0 14px}
+.dv-opts{display:flex;flex-wrap:nowrap;gap:30px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:700 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 Nunito,sans-serif;color:rgba(0,0,0,.55)}
+.dv-opt:target .dv-oid{background:#B5651D;color:#fff}
+.dv-next{margin:26px 0 0;font:12px/1.5 Nunito,sans-serif;color:rgba(0,0,0,.5)}
+@keyframes fall{0%{transform:translateY(-40px) rotate(0deg)}100%{transform:translateY(900px) rotate(520deg)}}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.4}50%{transform:scale(1.12);opacity:.75}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes pop{0%{transform:scale(.72);opacity:0}100%{transform:scale(1);opacity:1}}
+</style></helmet>
+
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Android · las 7 pantallas · duración libre · gusanito y rastro más gruesos · silla de pensar sin PIN</span></div>
+
+<div class="dv-sub">Temporizador</div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2n">
+<div class="dv-olabel"><a class="dv-oid" href="#2n">notas</a>qué cambió</div>
+<div style="width:290px;background:#FFFDF6;border:1px solid rgba(0,0,0,.1);border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.06);padding:22px 24px;box-sizing:border-box">
+<div style="font:800 17px 'Baloo 2',Nunito;color:#3A3128;margin-bottom:14px">Cambios</div>
+<div style="font:400 13px/1.65 Nunito;color:#5C5449;display:flex;flex-direction:column;gap:9px">
+<div><b>Android</b> (Material 3) y las <b>7 pantallas</b> visibles a la vez, cada una en su teléfono.</div>
+<div>No es un juego: es un <b>temporizador</b>. La duración es <b>libre</b> — más y menos de 1 en 1, de 1 a 60 minutos, con atajos rápidos.</div>
+<div>La <b>silla de pensar ya no pide PIN</b>: se elige la duración y comienza.</div>
+<div><b>Gusanito más grande</b> y <b>rastro más grueso</b> (20 px), con textura de crayón.</div>
+</div>
+<div style="height:1px;background:rgba(0,0,0,.08);margin:18px 0"></div>
+<div style="font:400 13px/1.65 Nunito;color:#5C5449"><b>Las dos pantallas de cuenta regresiva corren solas</b> a ×12 y se reinician al completar la vuelta, para que veas el recorrido sin tocar nada.</div>
+<div style="margin-top:14px;font:400 13px/1.65 Nunito;color:#5C5449">Al completar la vuelta, <b>los dos temporizadores suenan</b>: arpegio alegre en el temporizador, campanita más suave en la silla de pensar. En <a href="#2g">2g</a> está el protocolo para los adultos (la pantalla hace scroll).</div>
+<div style="margin-top:16px;padding:12px 14px;background:#F6EFDD;border-radius:8px;font:700 12px/1.5 Nunito;color:#8A6A2F">En Tweaks: color del gusanito, tamaño, grosor del rastro, sólido o migas, sonido y velocidad de demo. El navegador puede pedir un clic en la página antes de permitir el audio.</div>
+</div>
+</div>
+
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>1 · Inicio</div>
+<x-import component-from-global-scope="AndroidDevice" from="./android-frame.jsx" hint-size="412px,892px">
+<div style="position:relative;width:100%;height:100%;background:#FBF3E2;overflow:hidden;font-family:Nunito,sans-serif">
+<svg width="412" height="892" style="position:absolute;left:0;top:0;pointer-events:none;mix-blend-mode:multiply;opacity:.5"><filter id="grainA"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="4"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="412" height="892" filter="url(#grainA)" style="opacity:.16"></rect></svg>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:34px 26px 30px;box-sizing:border-box">
+<div style="display:flex;align-items:center;justify-content:space-between">
+<div style="font:800 30px 'Baloo 2',Nunito;color:#3A3128">Gusanito</div>
+<div style="width:50px;height:50px;border-radius:25px;background:#F2C14E;box-shadow:0 3px 0 rgba(0,0,0,.08)"></div>
+</div>
+<div style="font:700 16px Nunito;color:#9A8B70;margin-top:2px">¿qué vamos a medir?</div>
+<a href="#2b" style="margin-top:24px;display:block;height:252px;box-sizing:border-box;background:#FFFDF6;border:3px solid #E6D9BE;border-radius:32px;padding:28px 26px;box-shadow:0 8px 0 rgba(58,49,40,.09);color:inherit">
+<div style="display:flex;align-items:flex-end;gap:7px;height:70px">
+<div style="width:28px;height:28px;border-radius:14px;background:#A8DDA1"></div>
+<div style="width:38px;height:38px;border-radius:19px;background:#96D48D"></div>
+<div style="width:48px;height:48px;border-radius:24px;background:#86CC7E"></div>
+<div style="width:62px;height:62px;border-radius:31px;background:#7BC96F;position:relative">
+<div style="position:absolute;left:30px;top:16px;width:12px;height:12px;border-radius:6px;background:#FFFDF6"></div>
+<div style="position:absolute;left:46px;top:16px;width:12px;height:12px;border-radius:6px;background:#FFFDF6"></div>
+<div style="position:absolute;left:34px;top:20px;width:5px;height:5px;border-radius:3px;background:#3A3128"></div>
+<div style="position:absolute;left:50px;top:20px;width:5px;height:5px;border-radius:3px;background:#3A3128"></div>
+</div>
+</div>
+<div style="font:800 38px 'Baloo 2',Nunito;color:#3A3128;margin-top:26px">Temporizador</div>
+<div style="font:700 17px Nunito;color:#9A8B70;margin-top:2px">el gusanito da la vuelta</div>
+</a>
+<a href="#2e" style="margin-top:18px;display:block;height:252px;box-sizing:border-box;background:#F1E9D5;border:3px solid #DDCEAC;border-radius:32px;padding:28px 26px;box-shadow:0 8px 0 rgba(58,49,40,.07);color:inherit">
+<div style="display:flex;align-items:flex-end;gap:7px;height:70px">
+<div style="width:28px;height:28px;border-radius:14px;background:#D3C9B2"></div>
+<div style="width:38px;height:38px;border-radius:19px;background:#C6BBA2"></div>
+<div style="width:48px;height:48px;border-radius:24px;background:#B8AD93"></div>
+<div style="width:62px;height:62px;border-radius:31px;background:#A9A08C;position:relative">
+<div style="position:absolute;left:30px;top:16px;width:12px;height:12px;border-radius:6px;background:#F1E9D5"></div>
+<div style="position:absolute;left:46px;top:16px;width:12px;height:12px;border-radius:6px;background:#F1E9D5"></div>
+<div style="position:absolute;left:34px;top:20px;width:5px;height:5px;border-radius:3px;background:#59524A"></div>
+<div style="position:absolute;left:50px;top:20px;width:5px;height:5px;border-radius:3px;background:#59524A"></div>
+</div>
+</div>
+<div style="font:800 38px 'Baloo 2',Nunito;color:#6E6455;margin-top:26px">Silla de pensar</div>
+<div style="font:700 17px Nunito;color:#A2977F;margin-top:2px">tiempo tranquilo</div>
+</a>
+<div style="flex:1"></div>
+<div style="display:flex;gap:12px;align-items:center;padding:16px 20px;background:#F6EFDD;border-radius:22px">
+<div style="width:40px;height:40px;border-radius:12px;background:#E6D9BE"></div>
+<div style="font:700 14px/1.4 Nunito;color:#8A7A5E">Ajustes para adultos<br><span style="font-weight:400;color:#B6A98D">sonido, vibración, historial</span></div>
+</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="2b">
+<div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>2 · Cuánto tiempo (libre)</div>
+<x-import component-from-global-scope="AndroidDevice" from="./android-frame.jsx" hint-size="412px,892px">
+<div style="position:relative;width:100%;height:100%;background:#FBF3E2;overflow:hidden;font-family:Nunito,sans-serif">
+<svg width="412" height="892" style="position:absolute;left:0;top:0;pointer-events:none;mix-blend-mode:multiply;opacity:.5"><filter id="grainB"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="6"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="412" height="892" filter="url(#grainB)" style="opacity:.16"></rect></svg>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:26px 26px 30px;box-sizing:border-box">
+<a href="#2a" style="width:52px;height:52px;border-radius:26px;background:#F1E9D5;display:flex;align-items:center;justify-content:center;color:inherit"><div style="width:15px;height:15px;border-left:5px solid #8A7A5E;border-bottom:5px solid #8A7A5E;transform:rotate(45deg);margin-left:-4px"></div></a>
+<div style="font:800 32px 'Baloo 2',Nunito;color:#3A3128;margin-top:18px">¿Cuánto tiempo?</div>
+<div style="font:700 15px Nunito;color:#9A8B70;margin-top:2px">de 1 a 60 minutos</div>
+<div style="margin-top:26px;background:#FFFDF6;border:3px solid #E6D9BE;border-radius:32px;padding:26px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 7px 0 rgba(58,49,40,.07)">
+<div onClick="{{ jMinus }}" style="width:82px;height:82px;border-radius:41px;background:#F1E9D5;display:flex;align-items:center;justify-content:center;cursor:pointer" style-active="background:#E6D9BE"><div style="width:32px;height:6px;border-radius:3px;background:#8A7A5E"></div></div>
+<div style="text-align:center">
+<div ref="{{ refSetJ }}" style="font:800 84px 'Baloo 2',Nunito;color:#3A3128;line-height:1;letter-spacing:-2px">5</div>
+<div style="font:700 13px Nunito;color:#B6A98D;letter-spacing:2px;text-transform:uppercase">minutos</div>
+</div>
+<div onClick="{{ jPlus }}" style="width:82px;height:82px;border-radius:41px;background:#7BC96F;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative" style-active="background:#5FA855"><div style="width:32px;height:6px;border-radius:3px;background:#FFFDF6"></div><div style="position:absolute;width:6px;height:32px;border-radius:3px;background:#FFFDF6"></div></div>
+</div>
+<div style="font:700 13px Nunito;color:#B6A98D;letter-spacing:1.5px;text-transform:uppercase;margin:24px 0 12px">Atajos</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+<div onClick="{{ setJ1 }}" style="height:74px;border-radius:22px;background:#F6EFDD;border:2px solid #E6D9BE;display:flex;align-items:center;justify-content:center;font:800 30px 'Baloo 2',Nunito;color:#3A3128;cursor:pointer" style-active="background:#E6D9BE">1</div>
+<div onClick="{{ setJ3 }}" style="height:74px;border-radius:22px;background:#F6EFDD;border:2px solid #E6D9BE;display:flex;align-items:center;justify-content:center;font:800 30px 'Baloo 2',Nunito;color:#3A3128;cursor:pointer" style-active="background:#E6D9BE">3</div>
+<div onClick="{{ setJ5 }}" style="height:74px;border-radius:22px;background:#F6EFDD;border:2px solid #E6D9BE;display:flex;align-items:center;justify-content:center;font:800 30px 'Baloo 2',Nunito;color:#3A3128;cursor:pointer" style-active="background:#E6D9BE">5</div>
+<div onClick="{{ setJ10 }}" style="height:74px;border-radius:22px;background:#F6EFDD;border:2px solid #E6D9BE;display:flex;align-items:center;justify-content:center;font:800 30px 'Baloo 2',Nunito;color:#3A3128;cursor:pointer" style-active="background:#E6D9BE">10</div>
+<div onClick="{{ setJ15 }}" style="height:74px;border-radius:22px;background:#F6EFDD;border:2px solid #E6D9BE;display:flex;align-items:center;justify-content:center;font:800 30px 'Baloo 2',Nunito;color:#3A3128;cursor:pointer" style-active="background:#E6D9BE">15</div>
+<div onClick="{{ setJ30 }}" style="height:74px;border-radius:22px;background:#F6EFDD;border:2px solid #E6D9BE;display:flex;align-items:center;justify-content:center;font:800 30px 'Baloo 2',Nunito;color:#3A3128;cursor:pointer" style-active="background:#E6D9BE">30</div>
+</div>
+<div style="flex:1"></div>
+<div onClick="{{ startJ }}" style="height:96px;border-radius:48px;background:#7BC96F;box-shadow:0 8px 0 #5FA855;display:flex;align-items:center;justify-content:center;gap:14px;cursor:pointer" style-active="transform:translateY(4px);box-shadow:0 4px 0 #5FA855">
+<div style="width:0;height:0;border-left:24px solid #FFFDF6;border-top:15px solid transparent;border-bottom:15px solid transparent;margin-left:6px"></div>
+<div style="font:800 32px 'Baloo 2',Nunito;color:#FFFDF6">Empezar</div>
+</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="2c">
+<div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a>3 · Cuenta regresiva</div>
+<x-import component-from-global-scope="AndroidDevice" from="./android-frame.jsx" hint-size="412px,892px">
+<div style="position:relative;width:100%;height:100%;background:#FBF3E2;overflow:hidden;font-family:Nunito,sans-serif">
+<svg width="412" height="892" style="position:absolute;left:0;top:0;pointer-events:none;mix-blend-mode:multiply;opacity:.5"><filter id="grainC"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="8"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="412" height="892" filter="url(#grainC)" style="opacity:.16"></rect></svg>
+<svg width="396" height="812" style="position:absolute;left:0;top:0;overflow:visible">
+<filter id="crayonJ" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.026" numOctaves="2" seed="9" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="3.4" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap></filter>
+<g transform="translate(30 30)" filter="url(#crayonJ)">
+<path ref="{{ refTrackJ }}" d="M168 0 H302 A34 34 0 0 1 336 34 V718 A34 34 0 0 1 302 752 H34 A34 34 0 0 1 0 718 V34 A34 34 0 0 1 34 0 H168" style="fill:none;stroke:#E6D9BE;stroke-width:20;stroke-linecap:round"></path>
+<g ref="{{ refDotsJ }}"></g>
+<path ref="{{ refTrailJ }}" d="M168 0 H302 A34 34 0 0 1 336 34 V718 A34 34 0 0 1 302 752 H34 A34 34 0 0 1 0 718 V34 A34 34 0 0 1 34 0 H168" style="fill:none;stroke:#7BC96F;stroke-width:20;stroke-linecap:round;stroke-dasharray:2118;stroke-dashoffset:2118"></path>
+</g>
+<g transform="translate(30 30)" ref="{{ refWormJ }}"></g>
+</svg>
+<div style="position:absolute;left:0;right:0;top:260px;display:flex;flex-direction:column;align-items:center;gap:2px">
+<div ref="{{ refMsgJ }}" style="font:700 22px Nunito;color:#9A8B70;height:30px">¡Vamos!</div>
+<div ref="{{ refDigJ }}" style="font:800 100px 'Baloo 2',Nunito;color:#3A3128;line-height:1;letter-spacing:-2px">05:00</div>
+<div style="font:700 15px Nunito;color:#B6A98D;letter-spacing:2px;text-transform:uppercase">minutos</div>
+</div>
+<div style="position:absolute;left:0;right:0;bottom:118px;display:flex;flex-direction:column;align-items:center;gap:18px">
+<sc-if value="{{ jPlaying }}" hint-placeholder-val="{{ true }}">
+<div onClick="{{ pauseJ }}" style="width:104px;height:104px;border-radius:52px;background:#FFFDF6;border:4px solid #E6D9BE;box-shadow:0 7px 0 rgba(58,49,40,.09);display:flex;align-items:center;justify-content:center;gap:9px;cursor:pointer">
+<div style="width:13px;height:40px;border-radius:6px;background:#8A7A5E"></div><div style="width:13px;height:40px;border-radius:6px;background:#8A7A5E"></div>
+</div>
+</sc-if>
+<sc-if value="{{ jPaused }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ resumeJ }}" style="width:104px;height:104px;border-radius:52px;background:#7BC96F;box-shadow:0 7px 0 #5FA855;display:flex;align-items:center;justify-content:center;cursor:pointer">
+<div style="width:0;height:0;border-left:30px solid #FFFDF6;border-top:19px solid transparent;border-bottom:19px solid transparent;margin-left:8px"></div>
+</div>
+</sc-if>
+<div onClick="{{ stopJ }}" style="font:700 16px Nunito;color:#B6A98D;padding:10px 22px;cursor:pointer">terminar</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="2d">
+<div class="dv-olabel"><a class="dv-oid" href="#2d">2d</a>4 · Terminó</div>
+<x-import component-from-global-scope="AndroidDevice" from="./android-frame.jsx" hint-size="412px,892px">
+<div style="position:relative;width:100%;height:100%;background:#FDF7E6;overflow:hidden;font-family:Nunito,sans-serif">
+<div style="position:absolute;left:40px;width:14px;height:19px;border-radius:3px;background:#E8A33D;animation:fall 2.4s linear 0s infinite"></div>
+<div style="position:absolute;left:96px;width:12px;height:16px;border-radius:3px;background:#7BC96F;animation:fall 2.9s linear .4s infinite"></div>
+<div style="position:absolute;left:150px;width:15px;height:15px;border-radius:8px;background:#E8836A;animation:fall 2.6s linear .9s infinite"></div>
+<div style="position:absolute;left:210px;width:13px;height:18px;border-radius:3px;background:#6FB6D8;animation:fall 3.1s linear .2s infinite"></div>
+<div style="position:absolute;left:268px;width:14px;height:14px;border-radius:7px;background:#E8A33D;animation:fall 2.5s linear 1.2s infinite"></div>
+<div style="position:absolute;left:322px;width:12px;height:17px;border-radius:3px;background:#7BC96F;animation:fall 2.8s linear .6s infinite"></div>
+<div style="position:absolute;left:360px;width:13px;height:13px;border-radius:7px;background:#E8836A;animation:fall 3.3s linear 1.6s infinite"></div>
+<div style="position:absolute;left:16px;width:12px;height:16px;border-radius:3px;background:#6FB6D8;animation:fall 2.7s linear 1.9s infinite"></div>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 28px;box-sizing:border-box">
+<div style="display:flex;align-items:flex-end;gap:8px;animation:bob 1.6s ease-in-out infinite">
+<div style="width:34px;height:34px;border-radius:17px;background:#A8DDA1"></div>
+<div style="width:44px;height:44px;border-radius:22px;background:#96D48D"></div>
+<div style="width:56px;height:56px;border-radius:28px;background:#86CC7E"></div>
+<div style="width:78px;height:78px;border-radius:39px;background:#7BC96F;position:relative">
+<div style="position:absolute;left:36px;top:21px;width:14px;height:14px;border-radius:7px;background:#FFFDF6"></div>
+<div style="position:absolute;left:57px;top:21px;width:14px;height:14px;border-radius:7px;background:#FFFDF6"></div>
+<div style="position:absolute;left:40px;top:26px;width:6px;height:6px;border-radius:3px;background:#3A3128"></div>
+<div style="position:absolute;left:61px;top:26px;width:6px;height:6px;border-radius:3px;background:#3A3128"></div>
+<div style="position:absolute;left:42px;top:50px;width:28px;height:13px;border-bottom:4px solid #3A3128;border-radius:0 0 15px 15px"></div>
+</div>
+</div>
+<div style="font:800 56px 'Baloo 2',Nunito;color:#3A3128;margin-top:34px;animation:pop .5s ease-out">¡Terminó!</div>
+<div style="font:700 19px Nunito;color:#9A8B70;margin-top:4px;text-align:center">el gusanito dio la vuelta completa</div>
+<div style="display:flex;align-items:center;gap:8px;margin-top:22px;padding:9px 18px;background:#F6EFDD;border-radius:999px">
+<div style="width:11px;height:11px;border-radius:6px;background:#E8A33D"></div>
+<div style="font:700 14px Nunito;color:#8A6A2F">sonó la campanita</div>
+</div>
+<div onClick="{{ againJ }}" style="margin-top:26px;height:94px;width:100%;border-radius:47px;background:#E8A33D;box-shadow:0 8px 0 #C6851F;display:flex;align-items:center;justify-content:center;cursor:pointer" style-active="transform:translateY(4px);box-shadow:0 4px 0 #C6851F">
+<div style="font:800 30px 'Baloo 2',Nunito;color:#FFFDF6">Otra vez</div>
+</div>
+<div style="font:700 15px Nunito;color:#C0B49A;margin-top:18px">volver al inicio</div>
+</div>
+</div>
+</x-import>
+</div>
+
+</div>
+
+<div class="dv-sub">Silla de pensar</div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="2e">
+<div class="dv-olabel"><a class="dv-oid" href="#2e">2e</a>5 · Duración (sin PIN)</div>
+<x-import component-from-global-scope="AndroidDevice" from="./android-frame.jsx" hint-size="412px,892px">
+<div style="position:relative;width:100%;height:100%;background:#E7E6E1;overflow:hidden;font-family:Nunito,sans-serif">
+<svg width="412" height="892" style="position:absolute;left:0;top:0;pointer-events:none;mix-blend-mode:multiply;opacity:.55"><filter id="grainD"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="11"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="412" height="892" filter="url(#grainD)" style="opacity:.17"></rect></svg>
+<div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:26px 26px 30px;box-sizing:border-box">
+<a href="#2a" style="width:52px;height:52px;border-radius:26px;background:#F2F1ED;display:flex;align-items:center;justify-content:center;color:inherit"><div style="width:15px;height:15px;border-left:4px solid #8C887F;border-bottom:4px solid #8C887F;transform:rotate(45deg);margin-left:-4px"></div></a>
+<div style="font:800 30px 'Baloo 2',Nunito;color:#45423C;margin-top:20px">Silla de pensar</div>
+<div style="font:700 15px/1.5 Nunito;color:#8C887F;margin-top:4px">Recomendado: un minuto por año de edad.</div>
+<div style="margin-top:26px;background:#F2F1ED;border:2px solid #D6D4CD;border-radius:28px;padding:26px 20px;display:flex;align-items:center;justify-content:space-between">
+<div onClick="{{ cMinus }}" style="width:80px;height:80px;border-radius:40px;background:#E2E0DA;display:flex;align-items:center;justify-content:center;cursor:pointer" style-active="background:#D6D4CD"><div style="width:30px;height:5px;border-radius:3px;background:#5F5B54"></div></div>
+<div style="text-align:center">
+<div ref="{{ refSetC }}" style="font:800 82px 'Baloo 2',Nunito;color:#45423C;line-height:1">4</div>
+<div style="font:700 13px Nunito;color:#8C887F;letter-spacing:2px;text-transform:uppercase">minutos</div>
+</div>
+<div onClick="{{ cPlus }}" style="width:80px;height:80px;border-radius:40px;background:#5F5B54;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative" style-active="background:#4A473F"><div style="width:30px;height:5px;border-radius:3px;background:#F2F1ED"></div><div style="position:absolute;width:5px;height:30px;border-radius:3px;background:#F2F1ED"></div></div>
+</div>
+<div style="font:700 12px Nunito;color:#A29E96;letter-spacing:1.5px;text-transform:uppercase;margin:22px 0 10px">Por edad</div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px">
+<div onClick="{{ setC3 }}" style="height:66px;border-radius:18px;background:#F2F1ED;border:2px solid #D6D4CD;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer" style-active="background:#E2E0DA"><div style="font:700 22px 'Baloo 2',Nunito;color:#45423C">3</div><div style="font:400 10px Nunito;color:#A29E96">años</div></div>
+<div onClick="{{ setC4 }}" style="height:66px;border-radius:18px;background:#F2F1ED;border:2px solid #D6D4CD;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer" style-active="background:#E2E0DA"><div style="font:700 22px 'Baloo 2',Nunito;color:#45423C">4</div><div style="font:400 10px Nunito;color:#A29E96">años</div></div>
+<div onClick="{{ setC5 }}" style="height:66px;border-radius:18px;background:#F2F1ED;border:2px solid #D6D4CD;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer" style-active="background:#E2E0DA"><div style="font:700 22px 'Baloo 2',Nunito;color:#45423C">5</div><div style="font:400 10px Nunito;color:#A29E96">años</div></div>
+<div onClick="{{ setC6 }}" style="height:66px;border-radius:18px;background:#F2F1ED;border:2px solid #D6D4CD;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer" style-active="background:#E2E0DA"><div style="font:700 22px 'Baloo 2',Nunito;color:#45423C">6</div><div style="font:400 10px Nunito;color:#A29E96">años</div></div>
+<div onClick="{{ setC8 }}" style="height:66px;border-radius:18px;background:#F2F1ED;border:2px solid #D6D4CD;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer" style-active="background:#E2E0DA"><div style="font:700 22px 'Baloo 2',Nunito;color:#45423C">8</div><div style="font:400 10px Nunito;color:#A29E96">años</div></div>
+</div>
+<div style="margin-top:22px;padding:16px 18px;background:#EDECE8;border-radius:18px;font:400 13px/1.6 Nunito;color:#6E6A63">Durante el tiempo tranquilo la pantalla se queda fija. Solo un adulto puede terminarlo antes, manteniendo el botón presionado.</div>
+<div style="flex:1"></div>
+<div onClick="{{ startC }}" style="height:92px;border-radius:24px;background:#5F5B54;display:flex;align-items:center;justify-content:center;cursor:pointer" style-active="background:#4A473F">
+<div style="font:700 26px 'Baloo 2',Nunito;color:#F2F1ED">Comenzar</div>
+</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="2f">
+<div class="dv-olabel"><a class="dv-oid" href="#2f">2f</a>6 · Cuenta regresiva tranquila</div>
+<x-import component-from-global-scope="AndroidDevice" from="./android-frame.jsx" hint-size="412px,892px">
+<div style="position:relative;width:100%;height:100%;background:#E7E6E1;overflow:hidden;font-family:Nunito,sans-serif">
+<svg width="412" height="892" style="position:absolute;left:0;top:0;pointer-events:none;mix-blend-mode:multiply;opacity:.55"><filter id="grainE"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="13"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><rect width="412" height="892" filter="url(#grainE)" style="opacity:.17"></rect></svg>
+<div style="position:absolute;left:198px;top:406px;width:280px;height:280px;margin-left:-140px;margin-top:-140px;border-radius:140px;background:#DBDAD4;animation:breathe 6s ease-in-out infinite"></div>
+<svg width="396" height="812" style="position:absolute;left:0;top:0;overflow:visible">
+<filter id="crayonC2" x="-25%" y="-25%" width="150%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.024" numOctaves="2" seed="3" result="n2"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n2" scale="2.8" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap></filter>
+<g transform="translate(30 30)" filter="url(#crayonC2)">
+<path ref="{{ refTrackC }}" d="M168 0 H302 A34 34 0 0 1 336 34 V718 A34 34 0 0 1 302 752 H34 A34 34 0 0 1 0 718 V34 A34 34 0 0 1 34 0 H168" style="fill:none;stroke:#D6D4CD;stroke-width:16;stroke-linecap:round"></path>
+<g ref="{{ refDotsC }}"></g>
+<path ref="{{ refTrailC }}" d="M168 0 H302 A34 34 0 0 1 336 34 V718 A34 34 0 0 1 302 752 H34 A34 34 0 0 1 0 718 V34 A34 34 0 0 1 34 0 H168" style="fill:none;stroke:#9AA1A8;stroke-width:16;stroke-linecap:round;stroke-dasharray:2118;stroke-dashoffset:2118"></path>
+</g>
+<g transform="translate(30 30)" ref="{{ refWormC }}"></g>
+</svg>
+<div style="position:absolute;left:0;right:0;top:300px;display:flex;flex-direction:column;align-items:center;gap:8px">
+<div style="font:700 20px Nunito;color:#6E6A63">Quédate sentado</div>
+<sc-if value="{{ cShowDigits }}" hint-placeholder-val="{{ true }}">
+<div ref="{{ refDigC }}" style="font:700 80px 'Baloo 2',Nunito;color:#45423C;line-height:1.1;letter-spacing:-1px">04:00</div>
+</sc-if>
+<div ref="{{ refMsgC }}" style="font:400 15px Nunito;color:#8C887F;height:22px">el gusanito está dando la vuelta</div>
+</div>
+<div style="position:absolute;left:26px;right:26px;bottom:104px;display:flex;flex-direction:column;align-items:center;gap:14px">
+<div onPointerDown="{{ holdStart }}" onPointerUp="{{ holdEnd }}" onPointerLeave="{{ holdEnd }}" style="position:relative;width:100%;height:78px;border-radius:20px;background:#DBDAD4;border:2px solid #CDCBC4;overflow:hidden;display:flex;align-items:center;justify-content:center;cursor:pointer">
+<div ref="{{ refHoldBar }}" style="position:absolute;left:0;top:0;bottom:0;width:0;background:#C4C2BA"></div>
+<div style="position:relative;font:700 17px Nunito;color:#5F5B54">Mantén presionado para terminar</div>
+</div>
+<div style="font:400 13px Nunito;color:#A29E96">solo un adulto</div>
+</div>
+</div>
+</x-import>
+</div>
+
+<div class="dv-opt" id="2g">
+<div class="dv-olabel"><a class="dv-oid" href="#2g">2g</a>7 · Ya puedes levantarte</div>
+<x-import component-from-global-scope="AndroidDevice" from="./android-frame.jsx" hint-size="412px,892px">
+<div style="position:relative;width:100%;min-height:100%;background:#EAF3E4;font-family:Nunito,sans-serif;display:flex;flex-direction:column;align-items:center;padding:56px 26px 40px;box-sizing:border-box">
+<div style="display:flex;align-items:flex-end;gap:7px">
+<div style="width:28px;height:28px;border-radius:14px;background:#BFE0B6"></div>
+<div style="width:36px;height:36px;border-radius:18px;background:#A8DDA1"></div>
+<div style="width:48px;height:48px;border-radius:24px;background:#93D289"></div>
+<div style="width:66px;height:66px;border-radius:33px;background:#7BC96F;position:relative">
+<div style="position:absolute;left:30px;top:18px;width:13px;height:13px;border-radius:7px;background:#FFFDF6"></div>
+<div style="position:absolute;left:48px;top:18px;width:13px;height:13px;border-radius:7px;background:#FFFDF6"></div>
+<div style="position:absolute;left:34px;top:22px;width:5px;height:5px;border-radius:3px;background:#3A3128"></div>
+<div style="position:absolute;left:52px;top:22px;width:5px;height:5px;border-radius:3px;background:#3A3128"></div>
+</div>
+</div>
+<div style="font:800 44px 'Baloo 2',Nunito;color:#2F4A2B;margin-top:32px;text-align:center;line-height:1.15">Ya puedes<br>levantarte</div>
+<div style="font:400 17px/1.6 Nunito;color:#5A7154;margin-top:14px;text-align:center;max-width:290px">El gusanito terminó su vuelta. ¿Hablamos un momento de lo que pasó?</div>
+<div style="display:flex;align-items:center;gap:8px;margin-top:22px;padding:8px 16px;background:#DCEBD4;border-radius:999px">
+<div style="width:10px;height:10px;border-radius:5px;background:#5FA855"></div>
+<div style="font:700 13px Nunito;color:#4E7346">sonó la campanita</div>
+</div>
+<div onClick="{{ doneC }}" style="margin-top:26px;height:90px;width:100%;border-radius:24px;background:#5FA855;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none" style-active="background:#4E8E46">
+<div style="font:700 26px 'Baloo 2',Nunito;color:#FFFDF6">Listo</div>
+</div>
+<div style="width:100%;height:1px;background:#CFDEC7;margin:34px 0 26px"></div>
+<div data-protocolo="adultos" style="width:100%;background:#FBFDF9;border:1px solid #D7E5CF;border-radius:22px;padding:24px 22px;box-sizing:border-box">
+<div style="font:700 11px Nunito;color:#8AA382;letter-spacing:1.6px;text-transform:uppercase">Para los adultos</div>
+<div style="font:800 26px/1.2 'Baloo 2',Nunito;color:#2F4A2B;margin-top:8px">Protocolo para que el tiempo fuera sea efectivo</div>
+<div style="font:400 14px/1.65 Nunito;color:#54634F;margin-top:12px">Si decides utilizar la pausa como herramienta de gestión de conducta, la evidencia en modificación de conducta (como los protocolos de Parent-Child Interaction Therapy — PCIT) sugiere las siguientes pautas:</div>
+<div style="display:flex;flex-direction:column;gap:18px;margin-top:22px">
+<div style="display:flex;gap:14px">
+<div style="flex:none;width:26px;height:26px;border-radius:13px;background:#E3EEDD;display:flex;align-items:center;justify-content:center;font:700 13px Nunito;color:#4E7346">1</div>
+<div style="font:400 14px/1.6 Nunito;color:#54634F"><span style="font-weight:800;color:#2F4A2B">Objetivo de desescalada, no de castigo moral.</span> El propósito debe ser la regulación fisiológica (bajar la activación del sistema nervioso/amígdala), no la reflexión abstracta.</div>
+</div>
+<div style="display:flex;gap:14px">
+<div style="flex:none;width:26px;height:26px;border-radius:13px;background:#E3EEDD;display:flex;align-items:center;justify-content:center;font:700 13px Nunito;color:#4E7346">2</div>
+<div style="font:400 14px/1.6 Nunito;color:#54634F"><span style="font-weight:800;color:#2F4A2B">Consistencia e inmediatez.</span> Debe aplicarse inmediatamente después de la conducta límite (por ejemplo, agresión física o destrucción de objetos), sin advertencias repetitivas que diluyan el límite.</div>
+</div>
+<div style="display:flex;gap:14px">
+<div style="flex:none;width:26px;height:26px;border-radius:13px;background:#E3EEDD;display:flex;align-items:center;justify-content:center;font:700 13px Nunito;color:#4E7346">3</div>
+<div style="font:400 14px/1.6 Nunito;color:#54634F"><span style="font-weight:800;color:#2F4A2B">Criterio de finalización predecible.</span> Utiliza un temporizador visual o auditivo. La duración debe ser breve (2 a 4 minutos). Si el niño sigue en desborde motor o llanto intenso al sonar la alarma, la pausa se extiende únicamente hasta que logre entre 30 y 60 segundos de calma relativa.</div>
+</div>
+<div style="display:flex;gap:14px">
+<div style="flex:none;width:26px;height:26px;border-radius:13px;background:#E3EEDD;display:flex;align-items:center;justify-content:center;font:700 13px Nunito;color:#4E7346">4</div>
+<div style="font:400 14px/1.6 Nunito;color:#54634F"><span style="font-weight:800;color:#2F4A2B">Cierre sin sermones ni sobreexplicación.</span> Una vez cumplido el tiempo, el ciclo se cierra de inmediato. No se exige una disculpa forzada ni un debate largo; se restablece la actividad normal reforzando la conducta alternativa esperada: «las manos se usan para jugar, no para golpear; volvamos a armar los bloques».</div>
+</div>
+</div>
+</div>
+</div>
+</x-import>
+</div>
+
+</div>
+<p class="dv-next">Prueba: "el rastro de migas de pan en vez de línea" · "la silla de pensar sin números" · "agrega la pantalla de ajustes del adulto" · "otro estilo de gusanito"</p>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;colorGusanito&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#7BC96F&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#7BC96F&quot;,&quot;#E8A33D&quot;,&quot;#6FB6D8&quot;,&quot;#E8836A&quot;],&quot;section&quot;:&quot;Gusanito&quot;},&quot;tamanoGusanito&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:16,&quot;max&quot;:34,&quot;step&quot;:1,&quot;default&quot;:24,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Gusanito&quot;},&quot;grosorRastro&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:10,&quot;max&quot;:30,&quot;step&quot;:1,&quot;default&quot;:20,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Gusanito&quot;},&quot;rastro&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;solido&quot;,&quot;migas&quot;],&quot;default&quot;:&quot;solido&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Gusanito&quot;},&quot;sonido&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Prototipo&quot;},&quot;velocidadDemo&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;min&quot;:1,&quot;max&quot;:40,&quot;step&quot;:1,&quot;default&quot;:12,&quot;unit&quot;:&quot;x&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Prototipo&quot;},&quot;mostrarMinutosCastigo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Silla de pensar&quot;}}">
+const NS = 'http://www.w3.org/2000/svg';
+
+class Component extends DCLogic {
+  state = { jMin: 5, jPlaying: true, cMin: 4 };
+
+  eng = { j: { el: 0, dur: 300, run: true }, c: { el: 0, dur: 240, run: true } };
+  R = { j: {}, c: {} };
+
+  componentDidMount() {
+    this.last = performance.now();
+    this.raf = requestAnimationFrame(this.tick);
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf);
+    clearTimeout(this.holdT);
+    clearTimeout(this.loopT);
+  }
+  componentDidUpdate(prev) {
+    if (prev.colorGusanito !== this.props.colorGusanito || prev.rastro !== this.props.rastro
+      || prev.grosorRastro !== this.props.grosorRastro || prev.tamanoGusanito !== this.props.tamanoGusanito) {
+      this.R.j.built = false; this.R.c.built = false;
+    }
+  }
+
+  tick = (now) => {
+    const dt = Math.min(0.05, (now - this.last) / 1000);
+    this.last = now;
+    const speed = this.props.velocidadDemo ?? 12;
+    ['j', 'c'].forEach((k) => {
+      const e = this.eng[k];
+      if (e.run) {
+        e.el += dt * speed;
+        if (e.el >= e.dur) {
+          e.el = e.dur; e.run = false;
+          this.chime(k);
+          if (k === 'j') this.setState({ jPlaying: false });
+          clearTimeout(e.t);
+          e.t = setTimeout(() => {
+            e.el = 0; e.run = true;
+            if (k === 'j') this.setState({ jPlaying: true });
+          }, 1600);
+        }
+      }
+      this.paint(k, now / 1000);
+    });
+    this.raf = requestAnimationFrame(this.tick);
+  };
+
+  chime(k) {
+    if (!(this.props.sonido ?? true)) return;
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      if (!this.ac) this.ac = new AC();
+      const ac = this.ac;
+      if (ac.state === 'suspended') ac.resume();
+      // do-mi-sol-do alegre; en la silla de pensar, más suave y lento
+      const notes = k === 'j' ? [523.25, 659.25, 783.99, 1046.5] : [523.25, 659.25, 783.99];
+      const step = k === 'j' ? 0.11 : 0.2;
+      const vol = k === 'j' ? 0.22 : 0.14;
+      notes.forEach((f, i) => {
+        const t0 = ac.currentTime + i * step;
+        const o = ac.createOscillator(), g = ac.createGain();
+        o.type = 'triangle';
+        o.frequency.value = f;
+        g.gain.setValueAtTime(0.0001, t0);
+        g.gain.exponentialRampToValueAtTime(vol, t0 + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, t0 + (i === notes.length - 1 ? 0.85 : 0.3));
+        o.connect(g); g.connect(ac.destination);
+        o.start(t0); o.stop(t0 + 1);
+      });
+    } catch (err) { /* audio no disponible */ }
+  }
+
+  mkRef = (k, name) => (el) => {
+    const r = this.R[k];
+    r[name] = el;
+    if (el) { r.len = null; r.built = false; }
+  };
+
+  cfg(k) {
+    const head = this.props.tamanoGusanito ?? 24;
+    const w = this.props.grosorRastro ?? 20;
+    return k === 'j'
+      ? { n: 9, sp: head * 0.86, head, color: this.props.colorGusanito ?? '#7BC96F', wig: head * 0.16, ws: 5, eye: '#FFFDF6', w }
+      : { n: 8, sp: head * 0.8, head: head * 0.86, color: '#9AA1A8', wig: 1.1, ws: 1.1, eye: '#F2F1ED', w: w * 0.8 };
+  }
+
+  build(k) {
+    const r = this.R[k], c = this.cfg(k);
+    r.len = r.trail.getTotalLength();
+    r.trail.style.strokeWidth = c.w;
+    if (r.track) r.track.style.strokeWidth = c.w;
+    if (k === 'j') r.trail.style.stroke = c.color;
+
+    const migas = (this.props.rastro ?? 'solido') === 'migas';
+    r.trail.style.opacity = migas ? 0 : 1;
+    r.dotEls = [];
+    if (r.dots) {
+      r.dots.innerHTML = '';
+      if (migas) {
+        const N = 46;
+        for (let i = 0; i < N; i++) {
+          const d = (i + 0.5) * (r.len / N);
+          const p = r.trail.getPointAtLength(d);
+          const el = document.createElementNS(NS, 'circle');
+          el.setAttribute('cx', p.x); el.setAttribute('cy', p.y);
+          el.setAttribute('r', c.w * 0.45);
+          el.setAttribute('fill', c.color);
+          el.style.opacity = 0;
+          r.dots.appendChild(el);
+          r.dotEls.push({ el, d });
+        }
+      }
+    }
+
+    r.worm.innerHTML = '';
+    r.segs = [];
+    for (let i = c.n - 1; i >= 0; i--) {
+      const g = document.createElementNS(NS, 'g');
+      const body = document.createElementNS(NS, 'circle');
+      const rad = i === 0 ? c.head : Math.max(c.head * 0.32, c.head - 3 - i * 1.9);
+      body.setAttribute('r', rad);
+      body.setAttribute('fill', c.color);
+      body.setAttribute('opacity', i === 0 ? 1 : 0.94 - i * 0.035);
+      g.appendChild(body);
+      if (i === 0) {
+        const ex = c.head * 0.3, ey = c.head * 0.3, er = c.head * 0.24;
+        [[ex, -ey], [ex, ey]].forEach(([x, y]) => {
+          const e = document.createElementNS(NS, 'circle');
+          e.setAttribute('cx', x); e.setAttribute('cy', y); e.setAttribute('r', er);
+          e.setAttribute('fill', c.eye); g.appendChild(e);
+          const p = document.createElementNS(NS, 'circle');
+          p.setAttribute('cx', x + er * 0.4); p.setAttribute('cy', y); p.setAttribute('r', er * 0.48);
+          p.setAttribute('fill', '#3A3128'); g.appendChild(p);
+        });
+        if (k === 'j') {
+          for (const sx of [-0.15, 0.15]) {
+            const a = document.createElementNS(NS, 'circle');
+            a.setAttribute('cx', c.head * 0.35); a.setAttribute('cy', sx * c.head * 2.2);
+            a.setAttribute('r', c.head * 0.11); a.setAttribute('fill', c.color);
+            const l = document.createElementNS(NS, 'line');
+            l.setAttribute('x1', c.head * 0.5); l.setAttribute('y1', sx * c.head * 0.7);
+            l.setAttribute('x2', c.head * 0.35); l.setAttribute('y2', sx * c.head * 2.2);
+            l.setAttribute('stroke', c.color); l.setAttribute('stroke-width', c.head * 0.09);
+            g.appendChild(l); g.appendChild(a);
+          }
+        }
+      }
+      r.worm.appendChild(g);
+      r.segs[i] = g;
+    }
+    r.built = true;
+  }
+
+  fmt(s) {
+    const t = Math.max(0, Math.ceil(s));
+    return String(Math.floor(t / 60)).padStart(2, '0') + ':' + String(t % 60).padStart(2, '0');
+  }
+
+  msgJ(p) {
+    if (p < 0.02) return '¡Vamos!';
+    if (p < 0.25) return 'El gusanito camina';
+    if (p < 0.5) return '¡Un cuarto de vuelta!';
+    if (p < 0.75) return '¡Ya vas a la mitad!';
+    if (p < 0.94) return '¡Ya casi!';
+    return '¡Última esquina!';
+  }
+
+  paint(k, t) {
+    const r = this.R[k];
+    if (!r.trail || !r.worm) return;
+    if (!r.built) this.build(k);
+    const c = this.cfg(k), e = this.eng[k], L = r.len, p = Math.min(1, e.el / e.dur), pos = p * L;
+
+    r.trail.style.strokeDashoffset = L * (1 - p);
+    if (r.dotEls) for (const d of r.dotEls) d.el.style.opacity = d.d <= pos ? 0.95 : 0;
+
+    const dig = k === 'j' ? r.digJ : r.digC;
+    if (dig) dig.textContent = this.fmt(e.dur - e.el);
+    if (k === 'j' && r.msgJ) { const m = this.msgJ(p); if (r.msgJ.textContent !== m) r.msgJ.textContent = m; }
+    if (k === 'c' && r.msgC) {
+      const m = p > 0.88 ? 'ya falta poco' : 'el gusanito está dando la vuelta';
+      if (r.msgC.textContent !== m) r.msgC.textContent = m;
+    }
+
+    for (let i = 0; i < c.n; i++) {
+      const g = r.segs[i];
+      const d = pos - i * c.sp;
+      if (d < 0.5) { g.style.opacity = 0; continue; }
+      g.style.opacity = 1;
+      const a = r.trail.getPointAtLength(d);
+      const b = r.trail.getPointAtLength(Math.min(L, d + 2));
+      const ang = Math.atan2(b.y - a.y, b.x - a.x);
+      const w = Math.sin(t * c.ws - i * 0.85) * c.wig * (i === 0 ? 0.5 : 1);
+      const x = a.x - Math.sin(ang) * w, y = a.y + Math.cos(ang) * w;
+      g.setAttribute('transform', `translate(${x} ${y}) rotate(${ang * 180 / Math.PI})`);
+    }
+  }
+
+  setMin(k, mins) {
+    const key = k === 'j' ? 'jMin' : 'cMin';
+    const m = Math.max(1, Math.min(60, mins));
+    this.setState({ [key]: m });
+    const el = k === 'j' ? this.R.j.setJ : this.R.c.setC;
+    if (el) el.textContent = m;
+    return m;
+  }
+
+  start(k, mins) {
+    const e = this.eng[k];
+    clearTimeout(e.t);
+    e.dur = mins * 60; e.el = 0; e.run = true;
+    const r = this.R[k]; r.built = false; r.len = null;
+  }
+
+  renderVals() {
+    const bump = (k, d) => () => {
+      const cur = k === 'j' ? this.state.jMin : this.state.cMin;
+      this.setMin(k, cur + d);
+    };
+    const set = (k, m) => () => this.setMin(k, m);
+    return {
+      jPlaying: this.state.jPlaying, jPaused: !this.state.jPlaying,
+      jMinus: bump('j', -1), jPlus: bump('j', 1),
+      setJ1: set('j', 1), setJ3: set('j', 3), setJ5: set('j', 5),
+      setJ10: set('j', 10), setJ15: set('j', 15), setJ30: set('j', 30),
+      startJ: () => { this.start('j', this.state.jMin); this.setState({ jPlaying: true }); },
+      pauseJ: () => { this.eng.j.run = false; this.setState({ jPlaying: false }); },
+      resumeJ: () => { this.eng.j.run = true; this.setState({ jPlaying: true }); },
+      stopJ: () => { this.eng.j.run = false; this.eng.j.el = 0; this.setState({ jPlaying: false }); },
+      againJ: () => { this.start('j', this.state.jMin); this.setState({ jPlaying: true }); },
+      refTrailJ: this.mkRef('j', 'trail'), refTrackJ: this.mkRef('j', 'track'),
+      refDotsJ: this.mkRef('j', 'dots'), refWormJ: this.mkRef('j', 'worm'),
+      refDigJ: this.mkRef('j', 'digJ'), refMsgJ: this.mkRef('j', 'msgJ'), refSetJ: this.mkRef('j', 'setJ'),
+
+      cShowDigits: this.props.mostrarMinutosCastigo ?? true,
+      cMinus: bump('c', -1), cPlus: bump('c', 1),
+      setC3: set('c', 3), setC4: set('c', 4), setC5: set('c', 5), setC6: set('c', 6), setC8: set('c', 8),
+      startC: () => this.start('c', this.state.cMin),
+      doneC: () => this.start('c', this.state.cMin),
+      holdStart: () => {
+        const b = this.R.c.hold;
+        if (b) { b.style.transition = 'width 1.4s linear'; b.style.width = '100%'; }
+        clearTimeout(this.holdT);
+        this.holdT = setTimeout(() => {
+          const e = this.eng.c;
+          e.el = e.dur; e.run = false;
+          if (b) { b.style.transition = 'width .25s'; b.style.width = '0'; }
+        }, 1400);
+      },
+      holdEnd: () => {
+        clearTimeout(this.holdT);
+        const b = this.R.c.hold;
+        if (b) { b.style.transition = 'width .25s ease-out'; b.style.width = '0'; }
+      },
+      refTrailC: this.mkRef('c', 'trail'), refTrackC: this.mkRef('c', 'track'),
+      refDotsC: this.mkRef('c', 'dots'), refWormC: this.mkRef('c', 'worm'),
+      refDigC: this.mkRef('c', 'digC'), refMsgC: this.mkRef('c', 'msgC'), refSetC: this.mkRef('c', 'setC'),
+    };
+  }
+}
+</script>
+</body>
+</html>
