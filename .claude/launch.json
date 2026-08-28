@@ -4,7 +4,7 @@
     {
       "name": "gusanito-web",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8743", "--directory", "web"],
+      "runtimeArgs": ["-m", "http.server", "8743", "--directory", "docs"],
       "port": 8743
     }
   ]

@@ -142,7 +142,9 @@
       "Bash(export JAVA_HOME=\"/c/Program Files/Android/Android Studio/jbr\" && ls \"$JAVA_HOME/bin\" | grep -i keytool)",
       "Bash(git push *)",
       "Bash(gh release create v1.0 app/build/outputs/apk/release/TemporizadorGusanito-v1.0.apk --title 'Temporizador Gusanito v1.0' --notes ' *)",
-      "Bash(\"C:/Users/Ignacio Beloni/AppData/Local/Android/Sdk/platform-tools/adb.exe\" -s R5CW2080TCR install -r \"app/build/outputs/apk/release/TemporizadorGusanito-v1.0.apk\")"
+      "Bash(\"C:/Users/Ignacio Beloni/AppData/Local/Android/Sdk/platform-tools/adb.exe\" -s R5CW2080TCR install -r \"app/build/outputs/apk/release/TemporizadorGusanito-v1.0.apk\")",
+      "Bash(gh api *)",
+      "Bash(git mv *)"
     ]
   }
 }
