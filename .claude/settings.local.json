@@ -144,7 +144,26 @@
       "Bash(gh release create v1.0 app/build/outputs/apk/release/TemporizadorGusanito-v1.0.apk --title 'Temporizador Gusanito v1.0' --notes ' *)",
       "Bash(\"C:/Users/Ignacio Beloni/AppData/Local/Android/Sdk/platform-tools/adb.exe\" -s R5CW2080TCR install -r \"app/build/outputs/apk/release/TemporizadorGusanito-v1.0.apk\")",
       "Bash(gh api *)",
-      "Bash(git mv *)"
+      "Bash(git mv *)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://nachotkd11.github.io/temporizador-gusanito/)",
+      "Read(//c/Users/Ignacio Beloni/AppData/Local/Microsoft/**)",
+      "Read(//c/Users/Ignacio Beloni/AppData/Local/**)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://nachotkd11.github.io/gusanito-web/)",
+      "Bash(where python *)",
+      "Bash(python scripts/gen_fanfarria.py)",
+      "Bash(./gradlew.bat assembleDebug --console=plain)",
+      "Bash(export JAVA_HOME=\"C:/Program Files/Android/Android Studio/jbr\")",
+      "Bash(export PATH=\"$JAVA_HOME/bin:$PATH\")",
+      "Bash(./gradlew.bat assembleDebug --console=plain --no-daemon)",
+      "Bash(./gradlew.bat assembleDebug --console=plain --no-daemon --stacktrace)",
+      "PowerShell(cd \"C:\\\\dev\\\\Gusanito\"; $env:JAVA_HOME = \"C:\\\\Program Files\\\\Android\\\\Android Studio\\\\jbr\"; $env:PATH = \"$env:JAVA_HOME\\\\bin;$env:PATH\"; .\\\\gradlew.bat assembleDebug --console=plain 2>&1 | Select-Object -Last 150)",
+      "Bash(\"C:/Program Files/Android/Android Studio/jbr/bin/java\" -version)",
+      "Bash(mkdir -p /c/gt)",
+      "Bash(export JAVA_OPTS=\"-Djava.io.tmpdir=C:/gt\")",
+      "Bash(export JDK_JAVA_OPTIONS=\"-Djava.io.tmpdir=C:/gt\")",
+      "Bash(./gradlew.bat assembleDebug --console=plain --no-daemon -Djava.io.tmpdir=C:/gt)",
+      "Bash(git checkout *)"
     ]
   }
 }

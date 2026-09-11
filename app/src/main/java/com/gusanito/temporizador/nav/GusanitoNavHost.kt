@@ -54,7 +54,6 @@ fun GusanitoNavHost() {
                 val viewModel: TimerViewModel = viewModel(grafo, factory = TimerViewModel.factory(Modo.TEMPORIZADOR))
                 DuracionScreen(
                     viewModel = viewModel,
-                    onBack = { navController.popBackStack() },
                     onEmpezar = {
                         viewModel.iniciarCuenta()
                         navController.navigate(Rutas.CUENTA_REGRESIVA)
@@ -98,7 +97,6 @@ fun GusanitoNavHost() {
                 val viewModel: TimerViewModel = viewModel(grafo, factory = TimerViewModel.factory(Modo.SILLA))
                 SillaDuracionScreen(
                     viewModel = viewModel,
-                    onBack = { navController.popBackStack() },
                     onComenzar = {
                         viewModel.iniciarCuenta()
                         navController.navigate(Rutas.CUENTA_REGRESIVA_SILLA)

@@ -1,6 +1,5 @@
 package com.gusanito.temporizador.ui.screens.silladuracion
 
-import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -16,6 +15,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -25,9 +25,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -49,7 +47,6 @@ private val EDADES = listOf(3, 4, 5, 6, 8)
  */
 @Composable
 fun SillaDuracionScreen(
-    onBack: () -> Unit,
     onComenzar: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: TimerViewModel = viewModel(factory = TimerViewModel.factory(Modo.SILLA)),
@@ -60,13 +57,10 @@ fun SillaDuracionScreen(
         modifier = modifier
             .fillMaxSize()
             .background(Cool.paper)
+            .statusBarsPadding()
             .padding(horizontal = 26.dp)
-            .padding(top = 26.dp, bottom = 30.dp),
+            .padding(top = 34.dp, bottom = 30.dp),
     ) {
-        BackButton(onClick = onBack)
-
-        Spacer(Modifier.height(20.dp))
-
         Text(
             text = "Silla de pensar",
             fontFamily = Baloo2,
@@ -127,39 +121,6 @@ fun SillaDuracionScreen(
         Spacer(Modifier.weight(1f))
 
         ComenzarButton(onClick = onComenzar)
-    }
-}
-
-@Composable
-private fun BackButton(onClick: () -> Unit) {
-    val interaction = remember { MutableInteractionSource() }
-    val pressed by interaction.collectIsPressedAsState()
-    Box(
-        modifier = Modifier
-            .size(52.dp)
-            .clip(CircleShape)
-            .background(if (pressed) Cool.pressed else Cool.surface)
-            .clickable(interactionSource = interaction, indication = null, onClick = onClick),
-        contentAlignment = Alignment.Center,
-    ) {
-        Canvas(Modifier.size(14.dp)) {
-            val w = size.width
-            val h = size.height
-            drawLine(
-                color = Cool.inkMuted,
-                start = Offset(w, 0f),
-                end = Offset(0f, h / 2f),
-                strokeWidth = 5.dp.toPx(),
-                cap = StrokeCap.Round,
-            )
-            drawLine(
-                color = Cool.inkMuted,
-                start = Offset(0f, h / 2f),
-                end = Offset(w, h),
-                strokeWidth = 5.dp.toPx(),
-                cap = StrokeCap.Round,
-            )
-        }
     }
 }
 

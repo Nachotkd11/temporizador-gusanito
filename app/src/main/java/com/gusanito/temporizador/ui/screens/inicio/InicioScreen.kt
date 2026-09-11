@@ -51,26 +51,13 @@ fun InicioScreen(
             .padding(horizontal = 26.dp)
             .padding(top = 34.dp, bottom = 30.dp),
     ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Text(
-                text = "Gusanito",
-                fontFamily = Baloo2,
-                fontWeight = FontWeight.ExtraBold,
-                fontSize = 30.sp,
-                color = Warm.ink,
-            )
-            Box(
-                modifier = Modifier
-                    .size(50.dp)
-                    .hardShadow(CircleShape, Color.Black.copy(alpha = 0.08f), 3.dp)
-                    .clip(CircleShape)
-                    .background(Warm.sun),
-            )
-        }
+        Text(
+            text = "Gusanito",
+            fontFamily = Baloo2,
+            fontWeight = FontWeight.ExtraBold,
+            fontSize = 30.sp,
+            color = Warm.ink,
+        )
         Spacer(Modifier.height(2.dp))
         Text(
             text = "¿qué vamos a medir?",
@@ -115,39 +102,6 @@ fun InicioScreen(
         )
 
         Spacer(Modifier.weight(1f))
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .clip(RoundedCornerShape(22.dp))
-                .background(Warm.chip)
-                .padding(vertical = 16.dp, horizontal = 20.dp),
-            horizontalArrangement = Arrangement.spacedBy(12.dp),
-            verticalAlignment = Alignment.CenterVertically,
-        ) {
-            Box(
-                modifier = Modifier
-                    .size(40.dp)
-                    .clip(RoundedCornerShape(12.dp))
-                    .background(Warm.border),
-            )
-            Column {
-                Text(
-                    text = "Ajustes para adultos",
-                    fontFamily = Nunito,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 14.sp,
-                    color = Warm.inkSoft,
-                )
-                Text(
-                    text = "sonido, vibración, historial",
-                    fontFamily = Nunito,
-                    fontWeight = FontWeight.Normal,
-                    fontSize = 14.sp,
-                    color = Warm.inkFaint,
-                )
-            }
-        }
     }
 }
 
