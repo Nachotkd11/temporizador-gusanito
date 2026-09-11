@@ -61,7 +61,8 @@ import com.gusanito.temporizador.ui.theme.Nunito
 /**
  * Pantalla 6 · Cuenta regresiva tranquila (README, "6 · Cuenta regresiva tranquila"):
  * mismo recorrido perimetral que la pantalla 3, pero con clima calmado — colores fríos,
- * gusanito casi sin baile, círculo de respiración de fondo y sin controles para el niño.
+ * serpenteo del gusanito más suave y lento que en el temporizador, círculo de
+ * respiración de fondo y sin controles para el niño.
  * Solo un adulto puede terminar antes, manteniendo presionada la barra inferior 1.4 s.
  */
 @Composable
@@ -128,8 +129,8 @@ fun SillaCuentaRegresivaScreen(
                     headRadiusPx = 24.dp.toPx() * 0.86f,
                     segmentos = 8,
                     separacionFactor = 0.8f,
-                    frecuenciaOndulacion = 1.1f,
-                    amplitudPx = 1.1.dp.toPx(),
+                    frecuenciaOndulacion = 2f,
+                    amplitudPx = 4.5.dp.toPx(),
                     conAntenas = false,
                     colorCuerpo = Cool.worm,
                     colorOjo = Cool.surface,

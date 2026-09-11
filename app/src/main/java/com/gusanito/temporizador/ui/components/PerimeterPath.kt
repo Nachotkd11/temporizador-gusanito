@@ -60,10 +60,11 @@ data class GusanitoEstilo(
     val headRadiusPx: Float,
     val segmentos: Int = 9,
     val separacionFactor: Float = 0.86f,
-    val frecuenciaOndulacion: Float = 5f,
-    /** Amplitud fija de la ondulación en px; si es `null` se deriva de `headRadiusPx·0.16`
-     * (temporizador). La silla de pensar usa un valor fijo muy pequeño ("apenas
-     * perceptible, sin baile", README). */
+    val frecuenciaOndulacion: Float = 4f,
+    /** Amplitud fija de la ondulación en px; si es `null` se deriva de `headRadiusPx·0.55`
+     * (temporizador), lo bastante grande como para leerse como un serpenteo sinusoidal
+     * claro, similar al de una víbora. La silla de pensar usa un valor fijo más chico,
+     * para mantener el clima calmado, pero igual de sinusoidal. */
     val amplitudPx: Float? = null,
     val conAntenas: Boolean = true,
     val colorCuerpo: Color,
@@ -84,7 +85,7 @@ fun DrawScope.drawGusanito(
     val length = pathMeasure.length
     if (length <= 0f) return
     val separacionPx = estilo.headRadiusPx * estilo.separacionFactor
-    val amplitud = estilo.amplitudPx ?: (estilo.headRadiusPx * 0.16f)
+    val amplitud = estilo.amplitudPx ?: (estilo.headRadiusPx * 0.55f)
 
     for (i in estilo.segmentos - 1 downTo 0) {
         val distancia = distanciaCabeza - i * separacionPx

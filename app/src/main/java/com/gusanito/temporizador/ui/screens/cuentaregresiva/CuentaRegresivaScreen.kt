@@ -1,6 +1,7 @@
 package com.gusanito.temporizador.ui.screens.cuentaregresiva
 
 import android.content.Context
+import android.media.MediaPlayer
 import android.os.Build
 import android.os.VibrationEffect
 import android.os.Vibrator
@@ -44,6 +45,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.gusanito.temporizador.R
 import com.gusanito.temporizador.domain.Modo
 import com.gusanito.temporizador.timer.TimerViewModel
 import com.gusanito.temporizador.ui.components.GusanitoEstilo
@@ -80,6 +82,7 @@ fun CuentaRegresivaScreen(
     LaunchedEffect(completado) {
         if (completado) {
             vibrarCorto(context)
+            reproducirFanfarria(context)
             onCompletado()
         }
     }
@@ -246,4 +249,11 @@ private fun vibrarCorto(context: Context) {
         context.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
     }
     vibrator?.vibrate(VibrationEffect.createOneShot(180, VibrationEffect.DEFAULT_AMPLITUDE))
+}
+
+/** Fanfarria corta estilo 8/4-bit al terminar la vuelta. Se libera sola al acabar. */
+private fun reproducirFanfarria(context: Context) {
+    val player = MediaPlayer.create(context, R.raw.fanfarria_final) ?: return
+    player.setOnCompletionListener { it.release() }
+    player.start()
 }

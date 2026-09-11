@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -26,10 +27,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
-import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -47,7 +46,6 @@ private val ATAJOS = listOf(1, 3, 5, 10, 15, 30)
 
 @Composable
 fun DuracionScreen(
-    onBack: () -> Unit,
     onEmpezar: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: TimerViewModel = viewModel(factory = TimerViewModel.factory(Modo.TEMPORIZADOR)),
@@ -58,13 +56,10 @@ fun DuracionScreen(
         modifier = modifier
             .fillMaxSize()
             .background(Warm.paper)
+            .statusBarsPadding()
             .padding(horizontal = 26.dp)
-            .padding(top = 26.dp, bottom = 30.dp),
+            .padding(top = 34.dp, bottom = 30.dp),
     ) {
-        BackButton(onClick = onBack)
-
-        Spacer(Modifier.height(22.dp))
-
         Text(
             text = "¿Cuánto tiempo?",
             fontFamily = Baloo2,
@@ -108,39 +103,6 @@ fun DuracionScreen(
         Spacer(Modifier.weight(1f))
 
         EmpezarButton(onClick = onEmpezar)
-    }
-}
-
-@Composable
-private fun BackButton(onClick: () -> Unit) {
-    val interaction = remember { MutableInteractionSource() }
-    val pressed by interaction.collectIsPressedAsState()
-    Box(
-        modifier = Modifier
-            .size(52.dp)
-            .clip(CircleShape)
-            .background(if (pressed) Warm.border else Warm.cardAlt)
-            .clickable(interactionSource = interaction, indication = null, onClick = onClick),
-        contentAlignment = Alignment.Center,
-    ) {
-        Canvas(Modifier.size(14.dp)) {
-            val w = size.width
-            val h = size.height
-            drawLine(
-                color = Warm.inkSoft,
-                start = Offset(w, 0f),
-                end = Offset(0f, h / 2f),
-                strokeWidth = 5.dp.toPx(),
-                cap = StrokeCap.Round,
-            )
-            drawLine(
-                color = Warm.inkSoft,
-                start = Offset(0f, h / 2f),
-                end = Offset(w, h),
-                strokeWidth = 5.dp.toPx(),
-                cap = StrokeCap.Round,
-            )
-        }
     }
 }
 
