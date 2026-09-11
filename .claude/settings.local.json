@@ -163,7 +163,10 @@
       "Bash(export JAVA_OPTS=\"-Djava.io.tmpdir=C:/gt\")",
       "Bash(export JDK_JAVA_OPTIONS=\"-Djava.io.tmpdir=C:/gt\")",
       "Bash(./gradlew.bat assembleDebug --console=plain --no-daemon -Djava.io.tmpdir=C:/gt)",
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(git ls-remote *)",
+      "Bash(grep -o '\"html_url\": *\"[^\"]*\"' /tmp/pr_response.json | head -1; rm -f /tmp/pr_body.json /tmp/pr_response.json)",
+      "Bash(git commit *)"
     ]
   }
 }
