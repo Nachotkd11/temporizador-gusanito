@@ -166,7 +166,10 @@
       "Bash(git checkout *)",
       "Bash(git ls-remote *)",
       "Bash(grep -o '\"html_url\": *\"[^\"]*\"' /tmp/pr_response.json | head -1; rm -f /tmp/pr_body.json /tmp/pr_response.json)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git pull *)",
+      "Bash(git stash *)",
+      "Bash(git branch *)"
     ]
   }
 }
